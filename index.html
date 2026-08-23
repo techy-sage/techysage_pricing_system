@@ -166,6 +166,13 @@
 
         input[type="number"]:focus, input[type="text"]:focus, select:focus { border-color: var(--accent-blue); }
 
+        .read-only-val {
+            background-color: #0a0a0a !important;
+            border: 1px solid #222 !important;
+            color: var(--accent-blue) !important;
+            font-weight: 600;
+        }
+
         .slider-container { display: flex; align-items: center; gap: 12px; flex: 1.5; }
 
         input[type="range"] {
@@ -296,6 +303,28 @@
             margin-bottom: 16px;
             display: none;
         }
+
+        .contact-card {
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius);
+            padding: 16px;
+            margin-top: 20px;
+            border: 1px solid #1a1a1a;
+            font-size: 13px;
+            color: var(--text-sub);
+        }
+
+        .contact-card h3 {
+            font-size: 14px;
+            color: var(--text-main);
+            margin-bottom: 8px;
+        }
+
+        .contact-card a {
+            color: var(--accent-blue);
+            text-decoration: none;
+            font-weight: 600;
+        }
     </style>
 </head>
 <body>
@@ -337,20 +366,24 @@
 
         <div class="card">
             <div class="input-group">
-                <label for="wholesale-price">Wholesale Price (₦)</label>
-                <input type="number" id="wholesale-price" value="0" min="0">
+                <label for="purchase-price">Purchase Price (₦)</label>
+                <input type="number" id="purchase-price" value="0" min="0">
             </div>
             <div class="input-group">
-                <label for="wholesale-volume">Volume (ml)</label>
-                <input type="number" id="wholesale-volume" value="0" min="0">
+                <label for="purchased-volume">Purchased Volume (ml)</label>
+                <input type="number" id="purchased-volume" value="0" min="0">
             </div>
             <div class="input-group">
                 <label for="spillage-ml">Spillage (ml)</label>
                 <input type="number" id="spillage-ml" value="0" min="0" step="0.5">
             </div>
             <div class="input-group">
-                <label for="spillage-cost-per-ml">Spillage Cost / ml (₦)</label>
-                <input type="number" id="spillage-cost-per-ml" value="0" min="0">
+                <label for="remaining-volume">Remaining Volume (ml)</label>
+                <input type="number" id="remaining-volume" value="0" readonly class="read-only-val">
+            </div>
+            <div class="input-group">
+                <label for="cost-price-per-ml">Cost Price / ml (₦)</label>
+                <input type="number" id="cost-price-per-ml" value="0" readonly class="read-only-val">
             </div>
         </div>
 
@@ -448,11 +481,17 @@
         </div>
 
         <button class="btn btn-reset" id="reset-btn">Reset Calculator</button>
+
+        <div class="contact-card">
+            <h3>Feedback | Support</h3>
+            <p style="margin-bottom: 4px;">WhatsApp: <a href="https://wa.me/2348100329540" target="_blank">+2348100329540</a></p>
+            <p>Email: <a href="mailto:techysage.serve@gmail.com">techysage.serve@gmail.com</a></p>
+        </div>
     </div>
 
-    <!-- Combined & Obfuscated Application Script -->
+    <!-- Updated Obfuscated Script -->
     <script>
-        (function(){var _0x29af=['TS10242026','licensed_techysage_app','true','none','block','auto','b-cost-','wholesale-price','wholesale-volume','spillage-ml','spillage-cost-per-ml','margin-slider','rounding-select','overhead-rent','overhead-utilities','overhead-data','monthly-prod-vol','batch-size-select','batch-quantity','disp-cost-per-ml','disp-overhead-per-ml','margin-val-disp','pricing-table-body','batch-total-vol','batch-total-cost','batch-total-rev','batch-total-net','batch-status-badge','error-box','lock-screen','app-content','license-key-input','phone-input','lock-error-msg','unlock-btn','reset-btn'];const _0x1a2b=[3,6,10,15,20,30,50,100];let _0x3f4a=false;async function _0x51c2(_0x123f){const _0x4512=await crypto.subtle.digest("SHA-256",new TextEncoder().encode(_0x123f));return Array.from(new Uint8Array(_0x4512)).map(_0x918a=>_0x918a.toString(16).padStart(2,'0')).join('').toUpperCase();}function _0x2c1d(){if(localStorage.getItem(_0x29af[1])===_0x29af[2]){document.getElementById(_0x29af[29]).style.display=_0x29af[3];const _0x4d2e=document.getElementById(_0x29af[30]);_0x4d2e.style.filter=_0x29af[3];_0x4d2e.style.pointerEvents=_0x29af[5];}}async function _0x4b8a(){const _0x391c=document.getElementById(_0x29af[32]).value.trim();const _0x1c9d=document.getElementById(_0x29af[31]).value.trim().toUpperCase();const _0x2e8f=document.getElementById(_0x29af[33]);if(!_0x391c||!_0x1c9d){_0x2e8f.style.display=_0x29af[4];return;}const _0x181a=_0x391c+'_'+_0x29af[0];const _0x271b=await _0x51c2(_0x181a);const _0x361c=_0x271b.slice(0,4)+'-'+_0x271b.slice(4,8)+'-'+_0x271b.slice(8,12);if(_0x1c9d===_0x361c){localStorage.setItem(_0x29af[1],_0x29af[2]);localStorage.setItem('userPhone',_0x391c);_0x2c1d();}else{_0x2e8f.style.display=_0x29af[4];}}function _0x10f2(_0x5c8e){const _0x3b1a=document.getElementById(_0x5c8e);if(!_0x3b1a)return 0;const _0x2a9d=parseFloat(_0x3b1a.value);return isNaN(_0x2a9d)?0:_0x2a9d;}function _0x43e1(_0x1d2a){return'₦'+Math.round(_0x1d2a).toLocaleString('en-US');}function _0x289c(_0x4e5f,_0x12a3){if(_0x12a3<=1)return Math.round(_0x4e5f);return Math.round(_0x4e5f/_0x12a3)*_0x12a3;}function _0x59bd(){const _0x3d12=document.getElementById(_0x29af[28]);_0x3d12.style.display=_0x29af[3];_0x3d12.innerText='';const _0x14a2=_0x10f2(_0x29af[7]);const _0x21b3=_0x10f2(_0x29af[8]);const _0x33c4=_0x10f2(_0x29af[9]);let _0x44d5=_0x10f2(_0x29af[10]);const _0x55e6=_0x10f2(_0x29af[11]);const _0x11f7=parseInt(document.getElementById(_0x29af[12]).value);const _0x22a8=_0x10f2(_0x29af[13]);const _0x33b9=_0x10f2(_0x29af[14]);const _0x44ca=_0x10f2(_0x29af[15]);const _0x55db=_0x10f2(_0x29af[16]);if(_0x21b3<=0&&_0x14a2>0){_0x3d12.innerText='Wholesale Volume must be greater than zero when Wholesale Price is entered.';_0x3d12.style.display=_0x29af[4];return;}document.getElementById(_0x29af[21]).innerText=_0x55e6+'%';const _0x15c6=_0x21b3>0?(_0x14a2/_0x21b3):0;document.getElementById(_0x29af[19]).innerText='₦'+_0x15c6.toFixed(2);const _0x26d7=_0x22a8+_0x33b9+_0x44ca;const _0x37e8=_0x55db>0?(_0x26d7/_0x55db):0;document.getElementById(_0x29af[20]).innerText='₦'+_0x37e8.toFixed(2);const _0x48f9=_0x33c4*_0x44d5;const _0x59a1=document.getElementById(_0x29af[22]);_0x59a1.innerHTML='';const _0x12b2={};_0x1a2b.forEach(_0x1a3c=>{const _0x2b4d=_0x10f2(_0x29af[6]+_0x1a3c);const _0x3c5e=_0x1a3c*_0x15c6;const _0x4d6f=_0x1a3c*_0x37e8;const _0x5e70=_0x3c5e+_0x48f9+_0x2b4d+_0x4d6f;const _0x1f81=_0x55e6<100?(_0x5e70/(1-(_0x55e6/100))):0;const _0x2092=_0x289c(_0x1f81,_0x11f7);const _0x31a3=_0x2092-_0x5e70;_0x12b2[_0x1a3c]={totalCost:_0x5e70,finalPrice:_0x2092,netProfit:_0x31a3};const _0x42b4=document.createElement('tr');_0x42b4.innerHTML='<td>'+_0x1a3c+'ml</td><td class="text-right">'+_0x43e1(_0x5e70)+'</td><td class="text-right">'+_0x43e1(_0x2092)+'</td><td class="text-right">'+_0x43e1(_0x31a3)+'</td>';_0x59a1.appendChild(_0x42b4);});const _0x53c5=parseInt(document.getElementById(_0x29af[17]).value);const _0x14d6=_0x10f2(_0x29af[18]);const _0x25e7=_0x12b2[_0x53c5];if(_0x25e7){const _0x36f8=(_0x53c5+_0x33c4)*_0x14d6;const _0x4709=_0x25e7.totalCost*_0x14d6;const _0x581a=_0x25e7.finalPrice*_0x14d6;const _0x192b=_0x25e7.netProfit*_0x14d6;document.getElementById(_0x29af[23]).innerText=_0x36f8.toLocaleString()+' ml';document.getElementById(_0x29af[24]).innerText=_0x43e1(_0x4709);document.getElementById(_0x29af[25]).innerText=_0x43e1(_0x581a);const _0x2a3c=document.getElementById(_0x29af[26]);_0x2a3c.innerText=_0x43e1(_0x192b);const _0x3b4d=document.getElementById(_0x29af[27]);if(_0x192b>0){_0x3b4d.className='badge badge-success';_0x3b4d.innerText='Profitable';_0x2a3c.style.color='var(--success-color)';}else if(_0x192b===0){_0x3b4d.className='badge';_0x3b4d.style.background='#444';_0x3b4d.style.color='#fff';_0x3b4d.innerText='Break-even';_0x2a3c.style.color='#fff';}else{_0x3b4d.className='badge badge-danger';_0x3b4d.innerText='Loss-making';_0x2a3c.style.color='var(--error-color)';}}}document.getElementById(_0x29af[10]).addEventListener('input',()=>{_0x3f4a=true;});function _0x18c9(){if(!_0x3f4a){const _0x29da=_0x10f2(_0x29af[7]);const _0x3aeb=_0x10f2(_0x29af[8]);if(_0x3aeb>0){document.getElementById(_0x29af[10]).value=Math.round(_0x29da/_0x3aeb);}else{document.getElementById(_0x29af[10]).value=0;}}}function _0x2fd8(){document.getElementById(_0x29af[7]).value=0;document.getElementById(_0x29af[8]).value=0;document.getElementById(_0x29af[9]).value=0;document.getElementById(_0x29af[10]).value=0;document.getElementById(_0x29af[11]).value=40;document.getElementById(_0x29af[12]).value=1;_0x1a2b.forEach(_0x1122=>{document.getElementById(_0x29af[6]+_0x1122).value=0;});document.getElementById(_0x29af[13]).value=0;document.getElementById(_0x29af[14]).value=0;document.getElementById(_0x29af[15]).value=0;document.getElementById(_0x29af[16]).value=0;document.getElementById(_0x29af[17]).value=6;document.getElementById(_0x29af[18]).value=0;_0x3f4a=false;_0x59bd();}window.addEventListener('DOMContentLoaded',()=>{_0x2c1d();document.getElementById(_0x29af[34]).addEventListener('click',_0x4b8a);document.getElementById(_0x29af[31]).addEventListener('keypress',(_0x1234)=>{if(_0x1234.key==='Enter')_0x4b8a();});document.getElementById(_0x29af[35]).addEventListener('click',_0x2fd8);const _0x5678=document.querySelectorAll('input, select');_0x5678.forEach(_0x90ab=>{_0x90ab.addEventListener('input',()=>{if(_0x90ab.id===_0x29af[7]||_0x90ab.id===_0x29af[8]){_0x18c9();}_0x59bd();});});_0x59bd();});})();
+        (function(){var _0x29af=['TS10242026','licensed_techysage_app','true','none','block','auto','b-cost-','purchase-price','purchased-volume','spillage-ml','remaining-volume','cost-price-per-ml','margin-slider','rounding-select','overhead-rent','overhead-utilities','overhead-data','monthly-prod-vol','batch-size-select','batch-quantity','disp-cost-per-ml','disp-overhead-per-ml','margin-val-disp','pricing-table-body','batch-total-vol','batch-total-cost','batch-total-rev','batch-total-net','batch-status-badge','error-box','lock-screen','app-content','license-key-input','phone-input','lock-error-msg','unlock-btn','reset-btn'];const _0x1a2b=[3,6,10,15,20,30,50,100];async function _0x51c2(_0x123f){const _0x4512=await crypto.subtle.digest("SHA-256",new TextEncoder().encode(_0x123f));return Array.from(new Uint8Array(_0x4512)).map(_0x918a=>_0x918a.toString(16).padStart(2,'0')).join('').toUpperCase();}function _0x2c1d(){if(localStorage.getItem(_0x29af[1])===_0x29af[2]){document.getElementById(_0x29af[30]).style.display=_0x29af[3];const _0x4d2e=document.getElementById(_0x29af[31]);_0x4d2e.style.filter=_0x29af[3];_0x4d2e.style.pointerEvents=_0x29af[5];}}async function _0x4b8a(){const _0x391c=document.getElementById(_0x29af[33]).value.trim();const _0x1c9d=document.getElementById(_0x29af[32]).value.trim().toUpperCase();const _0x2e8f=document.getElementById(_0x29af[34]);if(!_0x391c||!_0x1c9d){_0x2e8f.style.display=_0x29af[4];return;}const _0x181a=_0x391c+'_'+_0x29af[0];const _0x271b=await _0x51c2(_0x181a);const _0x361c=_0x271b.slice(0,4)+'-'+_0x271b.slice(4,8)+'-'+_0x271b.slice(8,12);if(_0x1c9d===_0x361c){localStorage.setItem(_0x29af[1],_0x29af[2]);localStorage.setItem('userPhone',_0x391c);_0x2c1d();}else{_0x2e8f.style.display=_0x29af[4];}}function _0x10f2(_0x5c8e){const _0x3b1a=document.getElementById(_0x5c8e);if(!_0x3b1a)return 0;const _0x2a9d=parseFloat(_0x3b1a.value);return isNaN(_0x2a9d)?0:_0x2a9d;}function _0x43e1(_0x1d2a){return'₦'+Math.round(_0x1d2a).toLocaleString('en-US');}function _0x289c(_0x4e5f,_0x12a3){if(_0x12a3<=1)return Math.round(_0x4e5f);return Math.round(_0x4e5f/_0x12a3)*_0x12a3;}function _0x59bd(){const _0x3d12=document.getElementById(_0x29af[29]);_0x3d12.style.display=_0x29af[3];_0x3d12.innerText='';const _0x14a2=_0x10f2(_0x29af[7]);const _0x21b3=_0x10f2(_0x29af[8]);const _0x33c4=_0x10f2(_0x29af[9]);const _0xremVol=Math.max(0,_0x21b3-_0x33c4);document.getElementById(_0x29af[10]).value=_0xremVol;const _0x55e6=_0x10f2(_0x29af[12]);const _0x11f7=parseInt(document.getElementById(_0x29af[13]).value);const _0x22a8=_0x10f2(_0x29af[14]);const _0x33b9=_0x10f2(_0x29af[15]);const _0x44ca=_0x10f2(_0x29af[16]);const _0x55db=_0x10f2(_0x29af[17]);if(_0x21b3<=0&&_0x14a2>0){_0x3d12.innerText='Purchased Volume must be greater than zero when Purchase Price is entered.';_0x3d12.style.display=_0x29af[4];return;}if(_0x33c4>=_0x21b3&&_0x21b3>0){_0x3d12.innerText='Spillage cannot be equal to or greater than Purchased Volume.';_0x3d12.style.display=_0x29af[4];return;}document.getElementById(_0x29af[22]).innerText=_0x55e6+'%';const _0x15c6=_0xremVol>0?(_0x14a2/_0xremVol):0;document.getElementById(_0x29af[20]).innerText='₦'+_0x15c6.toFixed(2);document.getElementById(_0x29af[11]).value=_0x15c6.toFixed(2);const _0x26d7=_0x22a8+_0x33b9+_0x44ca;const _0x37e8=_0x55db>0?(_0x26d7/_0x55db):0;document.getElementById(_0x29af[21]).innerText='₦'+_0x37e8.toFixed(2);const _0x59a1=document.getElementById(_0x29af[23]);_0x59a1.innerHTML='';const _0x12b2={};_0x1a2b.forEach(_0x1a3c=>{const _0x2b4d=_0x10f2(_0x29af[6]+_0x1a3c);const _0x3c5e=_0x1a3c*_0x15c6;const _0x4d6f=_0x1a3c*_0x37e8;const _0x5e70=_0x3c5e+_0x2b4d+_0x4d6f;const _0x1f81=_0x55e6<100?(_0x5e70/(1-(_0x55e6/100))):0;const _0x2092=_0x289c(_0x1f81,_0x11f7);const _0x31a3=_0x2092-_0x5e70;_0x12b2[_0x1a3c]={totalCost:_0x5e70,finalPrice:_0x2092,netProfit:_0x31a3};const _0x42b4=document.createElement('tr');_0x42b4.innerHTML='<td>'+_0x1a3c+'ml</td><td class="text-right">'+_0x43e1(_0x5e70)+'</td><td class="text-right">'+_0x43e1(_0x2092)+'</td><td class="text-right">'+_0x43e1(_0x31a3)+'</td>';_0x59a1.appendChild(_0x42b4);});const _0x53c5=parseInt(document.getElementById(_0x29af[18]).value);const _0x14d6=_0x10f2(_0x29af[19]);const _0x25e7=_0x12b2[_0x53c5];if(_0x25e7){const _0x36f8=_0x53c5*_0x14d6;const _0x4709=_0x25e7.totalCost*_0x14d6;const _0x581a=_0x25e7.finalPrice*_0x14d6;const _0x192b=_0x25e7.netProfit*_0x14d6;document.getElementById(_0x29af[24]).innerText=_0x36f8.toLocaleString()+' ml';document.getElementById(_0x29af[25]).innerText=_0x43e1(_0x4709);document.getElementById(_0x29af[26]).innerText=_0x43e1(_0x581a);const _0x2a3c=document.getElementById(_0x29af[27]);_0x2a3c.innerText=_0x43e1(_0x192b);const _0x3b4d=document.getElementById(_0x29af[28]);if(_0x192b>0){_0x3b4d.className='badge badge-success';_0x3b4d.innerText='Profitable';_0x2a3c.style.color='var(--success-color)';}else if(_0x192b===0){_0x3b4d.className='badge';_0x3b4d.style.background='#444';_0x3b4d.style.color='#fff';_0x3b4d.innerText='Break-even';_0x2a3c.style.color='#fff';}else{_0x3b4d.className='badge badge-danger';_0x3b4d.innerText='Loss-making';_0x2a3c.style.color='var(--error-color)';}}}function _0x2fd8(){document.getElementById(_0x29af[7]).value=0;document.getElementById(_0x29af[8]).value=0;document.getElementById(_0x29af[9]).value=0;document.getElementById(_0x29af[10]).value=0;document.getElementById(_0x29af[11]).value=0;document.getElementById(_0x29af[12]).value=40;document.getElementById(_0x29af[13]).value=1;_0x1a2b.forEach(_0x1122=>{document.getElementById(_0x29af[6]+_0x1122).value=0;});document.getElementById(_0x29af[14]).value=0;document.getElementById(_0x29af[15]).value=0;document.getElementById(_0x29af[16]).value=0;document.getElementById(_0x29af[17]).value=0;document.getElementById(_0x29af[18]).value=6;document.getElementById(_0x29af[19]).value=0;_0x59bd();}window.addEventListener('DOMContentLoaded',()=>{_0x2c1d();document.getElementById(_0x29af[35]).addEventListener('click',_0x4b8a);document.getElementById(_0x29af[32]).addEventListener('keypress',(_0x1234)=>{if(_0x1234.key==='Enter')_0x4b8a();});document.getElementById(_0x29af[36]).addEventListener('click',_0x2fd8);const _0x5678=document.querySelectorAll('input, select');_0x5678.forEach(_0x90ab=>{_0x90ab.addEventListener('input',_0x59bd);});_0x59bd();});})();
     </script>
 
     <script>
